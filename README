@@ -1,0 +1,26 @@
+Training: 
+
+You take your video, mjpeg or mp4, and run it through its script. For each video, you do have to manually change the name or location or else you will override your previous work.
+
+2nd, you upload the stuff to ROBOFLOW following the process below, since there will be a lot of data:
+
+# Run in the command prompt!!!
+
+# make sure you're logged in
+roboflow login 
+
+# Authenticate
+roboflow authenticate
+
+# Import to the dials dataset
+roboflow import -w seniordesign-neufu -p dials-3dlwi /path/to/dat
+
+Label the images. Create a dataset, boom.
+
+Next, you select a version of YOLO and go through the Roboflow Model Training script. I am still in the process of cutting out the extra stuff. The beauty of this script is that it lets you upload the completed version to Roboflow so you can visualize the model easily, and there is some stuff there about implementing but right now, I don't care. To upload, you do need the API key which you should be able to find online. For safety reasons I have not included it in the repo.
+
+Now you have a trained model!
+
+Predictions:
+
+You can take a video and run the vid_to_predvid script, changing the paths as needed. This one is really nice, it does things so much faster than the stock Roboflow model.
